@@ -1,0 +1,7 @@
+node_modules/*
+cypress/reports/*
+.idea
+dist/
+cypress/videos/*
+cypress/screenshots/*
+cypress/downloads/*
