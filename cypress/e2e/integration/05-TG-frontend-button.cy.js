@@ -29,14 +29,35 @@ describe('Cypress Selectors', () => {
     })
 
  
+    it('Understand css syntax -', () =>{
+        cy.get('#checkbox-button-group')
+
+    })
+
+    it('Understand CSS syntax locating child -', () =>{
+        cy.get('#checkbox-button-group > div > #apple_check')
+
+      
+    })
+
+    it('validtae facebook link and enter text', () =>{
+        cy.get('#facebook_link, #text_input1')
+        .should('be.visible')
+    })
+
+ 
+    it('validtae boxes on dynamic elements', () =>{
+        cy.visit('https://www.techglobal-training.com/frontend/dynamic-elements')
+        cy.get('p[id^="box_1_"], p[id^="box_2_"]')
+        .should('be.visible')
+
+    })
+
+    it('Pseudo Class', () => {
+        cy.get('#orderd_list')
+    })
+
 })
-
-console.log('hey DUde')
-
-
-
-
-
 
 
 

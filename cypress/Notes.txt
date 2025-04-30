@@ -1,0 +1,93 @@
+Locators
+Element used for locating elements 
+Any selection that has interaction is an input(recieves elements)
+
+1: Xpath locator- HTML based, not a native browser language (browser translates it to find elements).
+
+/button /* finds all <button> elements */
+//*[@id="submit-btn"] /* finds element with id="submit-btn" */
+//div[@class="login-form"]/input /* finds <input> inside a <div> with class="login-form" */
+//div[contains(@class, "alert") and contains(@class, "error")] /* finds <div> with both "alert" and "error" classes */
+
+
+2: CSS locator- 
+button /* finds all <button> elements */
+#submit-btn         /* finds element with id="submit-btn" */
+.login-form input   /* finds all <input> inside any element with class="login-form" */
+div.alert.error     /* finds <div> with class="alert" AND "error" */
+
+class and ID are most common to use 
+space in class name are different class names  (Choose one) or use multiple 
+EXAMPLE: <button class="button is-white Footer_button__2oD+V">Mock Interviews</button>flex
+button.is-white.button
+
+
+CSS child access (do this when there is nothing unique to grab from so go to parrent and then access child via parrent)
+ 
+PARENT                      <div id="checkbox-button-group" data-identifier="Checkboxes"></div>
+CHILD DIV                   <div>
+CHILD THAT I WANT TO GET    <label id="apple_check" class="checkbox">…</label>
+
+#checkbox-button-group > div > #apple_check
+
+> === direct child 
+* === everyting under 
+, === allows you to jump from completly differnt classes so one parent to a completly differnt child in another class 
+
+
+square brackets [] are used to select elements by attribute in CSS we do this when ID's or classes are DYNAMIC
+its just regX:
+// ✅ Exact match
+cy.get('[type="submit"]') 
+
+// ✅ Contains (anywhere in value)
+cy.get('[href*="login"]') 
+
+// ✅ Starts with
+cy.get('[id^="box_"]') 
+
+// ✅ Ends with
+cy.get('[src$=".jpg"]') 
+
+// ✅ Attribute exists
+cy.get('[disabled]') 
+
+// ✅ Exact match with single quotes
+cy.get("[name='email']") 
+
+// ✅ Multiple attributes
+cy.get('[type="checkbox"][checked]') 
+
+// ✅ Best practice: custom data attributes for testing
+cy.get('[data-cy="login-btn"]') 
+---------------------------------------------------------------------------
+Pseudo Class
+// :first-child – first element in a parent
+cy.get('li:first-child')
+
+// :last-child – last element in a parent
+cy.get('li:last-child')
+
+// :nth-child(n) – nth element in a parent (1-based)
+cy.get('tr:nth-child(2)')
+
+// :hover – CSS only (can't use in Cypress selector, but affects styling)
+
+// :checked – checked checkboxes/radio buttons
+cy.get('input:checked')
+
+// :disabled – disabled inputs/buttons
+cy.get('button:disabled')
+
+// :focus – currently focused input
+cy.get('input:focus')
+
+// :not() – exclude certain elements
+cy.get('button:not([disabled])')
+
+
+
+
+
+
+
