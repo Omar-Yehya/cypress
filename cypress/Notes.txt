@@ -30,10 +30,10 @@ CHILD THAT I WANT TO GET    <label id="apple_check" class="checkbox">…</label>
 
 #checkbox-button-group > div > #apple_check
 
-> === direct child 
-* === everyting under 
-, === allows you to jump from completly differnt classes so one parent to a completly differnt child in another class 
-
+>   ===       direct child 
+*   ===       everyting under 
+,   ===       allows you to jump from completly differnt classes so one parent to a completly differnt child in another class 
+' ' ===       a space will skip to all children under so  #main-content h2 grabs all h2 under id 
 
 square brackets [] are used to select elements by attribute in CSS we do this when ID's or classes are DYNAMIC
 its just regX:
@@ -86,8 +86,28 @@ cy.get('input:focus')
 cy.get('button:not([disabled])')
 
 
+_________________________________4/30/2025______________________________________________________________________
+
+.eq             === target based on index
+
+.contains       === Visual text that is seen on web page  the best way to use contains use a element first        cy.contains('.card', 'HTML Elements') 
+
+.find('div')    Here you start with get at a parent and then find what you are looking for 
+
+.next()         Gets next element cy.get('div').contains('Paragraph').next()
+nextAll()       Gets all the next elements
+
+.prev           gets previous elemen
+.prevAll        gets all previous elemen
+
+.parent()       gets first paraent element  
+.parents()      goes all the way up to OG parent 
+parentsUntil() .parentsUntil('locatin') goes back up until that location  BUT NOT including 
+
+.children()     gets children of where you are 
 
 
+.check()        Only on checkbox and radio 
 
-
+.should('be.checked')     have.length 
 
