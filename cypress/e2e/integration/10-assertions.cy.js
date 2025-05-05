@@ -50,8 +50,12 @@ describe('Cypress Assertions', () =>{
             cy.wrap(el).should('be.visible').and('have.text', option[index])
         })
 
-
+        
 
     })
+
+    //validtae 5 social media icon in footer 
+    //validate links has techglobal in href attribute
+    // validate all links has target attribute value is "_blank"
 
 })

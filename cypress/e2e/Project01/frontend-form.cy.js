@@ -27,7 +27,7 @@ beforeEach(() =>{
 
     it('Validate Full name input box', () =>{
         cy.get('input[placeholder$="name"]')
-        .should('be.visible')                           // ehee
+        .should('be.visible')                           
         .and('have.attr', 'placeholder', 'Enter your full name')
         .and('have.attr', 'required')
         
@@ -35,13 +35,16 @@ beforeEach(() =>{
     })
 
 
-    it('Validtae Gender radio button', () =>{
+    it.only('Validtae Gender radio button', () =>{
         const gender = ['Male', 'Female', 'Prefer not to disclose']
+
+        cy.contains('.input', 'Male')
+        .should('have.attr', 'required')
 
         cy.get('.control > label.label')
           .should('have.text', 'Gender *')
       
-          cy.get('label.radio') // Each radio button wrapper
+          cy.get('label.radio') 
           .each(($el, index) => {
            
             cy.wrap($el)
@@ -163,4 +166,5 @@ beforeEach(() =>{
     })
 
 })
+
 

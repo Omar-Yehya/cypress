@@ -17,6 +17,7 @@
 import './commands'
 import '@4tw/cypress-drag-drop'
 import 'cypress-real-events'
+
 Cypress.on('uncaught:exception', (err, runnable) => {
     // prevent Cypress from failing the test on app-side errors
     return false
