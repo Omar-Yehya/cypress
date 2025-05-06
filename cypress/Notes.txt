@@ -111,3 +111,11 @@ parentsUntil() .parentsUntil('locatin') goes back up until that location  BUT NO
 
 .should('be.checked')     have.length 
 
+
+
+______________________________________________________________________
+iFrame 
+
+cy.get('#form_frame')
+its('0.contentDocument.body')
+.find('#first_name')
