@@ -111,11 +111,57 @@ parentsUntil() .parentsUntil('locatin') goes back up until that location  BUT NO
 
 .should('be.checked')     have.length 
 
+.invoke()       will grab but not make any command 
+
 
 
 ______________________________________________________________________
 iFrame 
 
-cy.get('#form_frame')
-its('0.contentDocument.body')
-.find('#first_name')
+cy.get('#form_frame')           Get some unique  iframe locator
+its('0.contentDocument.body')   always do this with iFrames
+.find('#first_name')            use find instead of get
+
+______________________________________________________________________
+Multiple tabs
+
+Cypress cannot natively open or test new browser tabs or windows.
+
+
+cy.get('#apple').invoke('removeAttr', 'target').click()
+
+what we did here was remove target to open on same page 
+
+______________________________________________________________________
+Alerts
+3 types: Warning Alert, Confirmation alert, Prompt Alert
+
+Event listners wait for alert then -
+WARNING ALERT
+  cy.on('window:alert', (str) =>{
+            console.log(str)
+        })
+
+
+CONFORMATION ALERT
+    cy.on('window:confirm', (str) => })
+
+
+PROMPT ALERT
+
+    it('Handle prompt', () =>{
+
+        cy.window().then((win) =>{
+            cy.stub(win, 'prompt').returns(null)
+        })
+        cy.get('#prompt_alert').click()
+        
+    })
+
+
+ cy.stub(win, 'prompt').callsFake((message) => {
+expect(message).to.equal('What would you like to say to TechGlobal?')
+
+so when we return a message it is the same as confirm when we say 
+return flase or null it means cancel 
+

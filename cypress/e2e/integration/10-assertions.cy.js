@@ -40,7 +40,7 @@ describe('Cypress Assertions', () =>{
 
     })
 
-    it.only('Explicit Assertions with Each', () =>{
+    it('Explicit Assertions with Each', () =>{
         const option = ['Java Exercises', 'JS Exercises']
         cy.get('#dropdown-exercises').realHover()
         cy.get('a[id*="j"]').should('have.length', 2).each((el, index) =>{
@@ -54,8 +54,23 @@ describe('Cypress Assertions', () =>{
 
     })
 
-    //validtae 5 social media icon in footer 
-    //validate links has techglobal in href attribute
-    // validate all links has target attribute value is "_blank"
+
+    it('Validate 5 social media icon ', () =>{
+        cy.get('.Footer_socials__7h4n1 a')
+        .should('have.length', 5)
+        .each((el) =>{
+
+            cy.wrap(el)
+            .should('have.attr', 'href')
+            .should('include', 'techglobal')
+
+
+            cy.wrap(el)
+            .should('have.attr', 'target', '_blank')
+            
+
+        })
+
+    })
 
 })
