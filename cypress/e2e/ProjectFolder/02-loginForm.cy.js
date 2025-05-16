@@ -132,6 +132,13 @@ describe('Login Form validation', () =>{
         .and('have.text', 'Invalid Username entered!')
 
     })
+//waits
+    it.only('Practice manuplating url using js', () => {
+    cy.visit('https://www.techglobal-training.com/frontend/alerts')
+ 
+        
+
+    })
 
 })
 

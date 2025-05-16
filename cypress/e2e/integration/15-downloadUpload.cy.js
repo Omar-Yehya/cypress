@@ -17,7 +17,7 @@ describe('file download and upload', () =>{
 
     it('File Upload', () =>{
 
-        cy.get('#file_upload').selectFile(dPath, {action: 'drag-drop'})
+        cy.get('#file_upload').selectFile(dPath)//{action: 'drag-drop'})
         cy.get('#file_submit').realClick()
         cy.get('.notification.is-success')
         .should('be.visible')

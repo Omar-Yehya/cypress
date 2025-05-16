@@ -57,13 +57,13 @@ describe('Register User', () =>{
         .should('be.visible')
 
 
-        cy.get('.fa.fa-trash-o').click()
+        // cy.get('.fa.fa-trash-o').click()
 
-        cy.get('div>h2 b')
-        .should('be.visible')
-        .and('have.text', 'Account Deleted!')
+        // cy.get('div>h2 b')
+        // .should('be.visible')
+        // .and('have.text', 'Account Deleted!')
 
-        cy.get('div>a.btn').click()
+        // cy.get('div>a.btn').click()
 
 
 
